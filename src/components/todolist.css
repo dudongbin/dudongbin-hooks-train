@@ -1,0 +1,29 @@
+ul, li {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-content {
+  width: 300px;
+  border:1px solid darksalmon;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #666;
+}
+
+.todo-complete {
+  margin-right: 10px;
+  color: darkcyan;
+}
+
+.todo-delete {
+  color: darkcyan;
+}
+
+.complete {
+  background: #b7eb8f;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const cookieStr = "__MYLOG_UID=ec3f4e8c-33bd-4901-bc72-c874c3bcb73b; gr_user_id=4df7567f-57ee-42f8-8a55-b69c2eeed1cf; grwng_uid=cacaf753-c689-4bc9-a998-7c7dcd9f135a; gdxidpyhxdE=8t%5CqQnm3iL%2Fx%2BtTEIJXUGdoRUiigRvq8c41D8UX7z6l%2FRTjtqc%5CUmbSr1Iwb2H8EGbG2fZYgJK9V6lf8PKnOGkY4c2mmWqLfwZ%2FINrzZjKlBSzwJb95QJoi%2B3kPgOZdwQvy5%2Ff%2BLkcjtfs9tH%2F0tM2nGcy38XBMg5fedNhLqdd51qKHj%3A1591930005743; YD00361725707793%3AWM_TID=5%2FOaynZz7vtFBFVVRUZvGMh9OBQTzN7k; _e=1; __MYLOG_SID=e57653b3-e2ce-455b-92b4-7c15ecf559ba; b191d4a76e67e693_gr_session_id=acc69dc4-6578-4959-8374-256ef268f445; b191d4a76e67e693_gr_session_id_acc69dc4-6578-4959-8374-256ef268f445=true; LG_TK_SAAS=LTKEEA898155B1A40DC9B0868A2A2198FF3; IA_SAAS=LTKEEA898155B1A40DC9B0868A2A2198FF3";
+
+  function get(name) {
+    // server side
+    if (typeof document === 'undefined') {
+      return '';
+    }
+
+    var nameEQ = "".concat(name, "=");
+    var ca = cookieStr.split(';');
+
+    for (var i = 0; i < ca.length; i += 1) {
+      var c = ca[i];
+
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1, c.length);
+      }
+
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+
+    return '';
+  }
+
+  const a = get('LG_TK_SAAS');
+  console.log('a: ', a);
+
+</script>
+</html>
